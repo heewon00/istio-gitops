@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: query
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: query
+  template:
+    metadata:
+      labels:
+        app: query
+    spec:
+      containers:
+      - name: query
+        image: ghcr.io/heewon00/springboot_cqrs_query_istio:v1
+        imagePullPolicy: Always
+        env:
+          - name: SPRING_PROFILES_ACTIVE
+            value: "prd"
+        ports:
+        - containerPort: 8082
