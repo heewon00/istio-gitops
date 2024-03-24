@@ -22,3 +22,5 @@ spec:
             value: "prd"
         ports:
         - containerPort: 8081
+      imagePullSecrets:
+      - name: regsecret
