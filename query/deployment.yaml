@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: query
-        image: ghcr.io/heewon00/springboot_cqrs_query_istio:v1
+        image: ghcr.io/heewon00/springboot_cqrs_query_istio:v2
         imagePullPolicy: Always
         env:
           - name: SPRING_PROFILES_ACTIVE
